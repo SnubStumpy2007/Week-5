@@ -1,5 +1,6 @@
 //sources
 // https://www.udemy.com/course/jquery-tutorial/learn/lecture/4934588#overview
+//https://api.jquery.com/each/
 
 
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
@@ -29,20 +30,33 @@ $(function () {
 
     // defining variables using a find() method.
  
-    var hourEleven = $("#hour-11").find("textarea").val();
+    //var hourEleven = $("#hour-11").find("textarea").val();
 
    // submitButton();
 
-    // Hour 9 box
-     var hourNine = $("#hour-9").find("textarea").val(function() {
-        console.log("9",  hourNine);
-        submitButton();
+   // function for nine o-clock
+   // first define variables for each of the elements.
+   // text area and 
+   $("#form").find("#hour-9").each(function() {
+    var textArea = $(this).find("textarea");
+    var saveBtn = $(this).find("#saveBtnNine");
+
+    saveBtn.click(function() {
+        var textContentNine = textArea.val();
+        $("#nineText").val(textContentNine);
+        console.log(textContentNine);
+        });
+    });
+
+     var hourTen = $("#hour-10").find("textarea").val(function(event) {
+        //submitButton(event, hourTen);
+        //console.log(hourTen, "10");
      });
 
-     var hourTen = $("#hour-9").find("textarea").val(function() {
-        console.log("10", hourTen);
-        submitButton();
-     });
+     var hourEleven = $("#hour-11").find("textarea").val(function(event) {
+        //submitButton(event, hourEleven);
+       // console.log(hourEleven, "11");
+     })
 
 });
 
@@ -54,17 +68,22 @@ $(function () {
 
 
 // fuknction for the submit function
-function submitButton() {
-    $(".saveBtn").click(function() {
-     //   alert("hi, I'm Elize Lutus!");  //Test to make sure I got the button working.
-         var textarea = $("textarea").val();
-         console.log(textarea);
-     });
-}
+// function submitButtonNine() {
+//     $("#saveBtnNine").click(function() {
+//          var textarea = $("nineText").val();
+//          console.log("text",textarea);
+//      });
+// }
 
+// var hourNine = $("#hour-9").find("textarea").val(function(event) {
+//     submitButtonNine(event, hourNine);
+//   //  console.log(hourNine, "9");
+//  });
 
-
-
+// var hourNine = $("#hour-9").find("textarea").val(function(event) {
+//     submitButtonNine(event, hourNine);
+//   //  console.log(hourNine, "9");
+//  });
 
 // saveBtn listener for click events
 // save user input in local storage
