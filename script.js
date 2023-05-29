@@ -1,3 +1,7 @@
+//sources
+// https://www.udemy.com/course/jquery-tutorial/learn/lecture/4934588#overview
+
+
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
@@ -19,8 +23,47 @@
 
 // flexbox and custom styling.
 $(function () {
+    // current day
+    var today = dayjs();
+    $('#currentDay').text(today.format('MMM D, YYYY'));
+
+    // defining variables using a find() method.
  
+    var hourEleven = $("#hour-11").find("textarea").val();
+
+   // submitButton();
+
+    // Hour 9 box
+     var hourNine = $("#hour-9").find("textarea").val(function() {
+        console.log("9",  hourNine);
+        submitButton();
+     });
+
+     var hourTen = $("#hour-9").find("textarea").val(function() {
+        console.log("10", hourTen);
+        submitButton();
+     });
+
 });
+
+
+
+
+// function to save to local storage
+
+
+
+// fuknction for the submit function
+function submitButton() {
+    $(".saveBtn").click(function() {
+     //   alert("hi, I'm Elize Lutus!");  //Test to make sure I got the button working.
+         var textarea = $("textarea").val();
+         console.log(textarea);
+     });
+}
+
+
+
 
 
 // saveBtn listener for click events
@@ -51,3 +94,8 @@ $(function () {
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
+
+
+  // Steps and what I did
+  // 1.  Added date method citing one of our class activities
+  // 2.  Link submit button to the jQuery file using an alert prompt.
