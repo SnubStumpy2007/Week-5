@@ -48,15 +48,27 @@ $(function () {
         });
     });
 
-     var hourTen = $("#hour-10").find("textarea").val(function(event) {
-        //submitButton(event, hourTen);
-        //console.log(hourTen, "10");
-     });
+ $("#form").find("#hour-10").each(function() {
+    var textArea = $(this).find("textarea");
+    var saveBtn = $(this).find("#saveBtnTen");
 
-     var hourEleven = $("#hour-11").find("textarea").val(function(event) {
-        //submitButton(event, hourEleven);
-       // console.log(hourEleven, "11");
-     })
+    saveBtn.click(function() {
+        var textContentTen = textArea.val();
+        $("#tenText").val(textContentTen);
+        console.log(textContentTen);
+        });
+    });
+
+     $("#form").find("#hour-11").each(function() {
+    var textArea = $(this).find("textarea");
+    var saveBtn = $(this).find("#saveBtnEleven");
+
+    saveBtn.click(function() {
+        var textContentEleven = textArea.val();
+        $("#elevenText").val(textContentEleven);
+        console.log(textContentEleven);
+        });
+    });
 
 });
 
