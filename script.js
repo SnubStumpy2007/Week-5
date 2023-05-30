@@ -1,6 +1,7 @@
 //sources
 // https://www.udemy.com/course/jquery-tutorial/learn/lecture/4934588#overview
 //https://api.jquery.com/each/
+// https://github.com/SnubStumpy2007/Week-4/blob/main/script.js
 
 
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
@@ -29,11 +30,6 @@ $(function () {
     $('#currentDay').text(today.format('MMM D, YYYY'));
 
     // defining variables using a find() method.
- 
-    //var hourEleven = $("#hour-11").find("textarea").val();
-
-   // submitButton();
-
    // function for nine o-clock
    // first define variables for each of the elements.
    // text area and 
@@ -46,9 +42,9 @@ $(function () {
         $("#nineText").val(textContentNine);
         console.log(textContentNine);
 
-        const result = JSON.parse(localStorage.getItem("textContentNine"));
-       // result.push(result);
-        localStorage.setItem('result', JSON.stringify(result))
+        const result = JSON.parse(localStorage.getItem('result')) || [];
+        result.push(textContentNine);
+        localStorage.setItem('result', JSON.stringify(result));
         });
     });
 
@@ -61,7 +57,9 @@ $(function () {
         $("#tenText").val(textContentTen);
         console.log(textContentTen);
 
-        
+        const result = JSON.parse(localStorage.getItem('result')) || [];
+        result.push(textContentTen);
+        localStorage.setItem('result', JSON.stringify(result));
         });
         
     });
@@ -74,45 +72,14 @@ $(function () {
         var textContentEleven = textArea.val();
         $("#elevenText").val(textContentEleven);
         console.log(textContentEleven);
+
+        const result = JSON.parse(localStorage.getItem('result')) || [];
+        result.push(textContentEleven);
+        localStorage.setItem('result', JSON.stringify(result));
         });
     });
 
 });
-
-
-
-
-// function to save to local storage
-
-
-
-// fuknction for the submit function
-// function submitButtonNine() {
-//     $("#saveBtnNine").click(function() {
-//          var textarea = $("nineText").val();
-//          console.log("text",textarea);
-//      });
-// }
-
-// var hourNine = $("#hour-9").find("textarea").val(function(event) {
-//     submitButtonNine(event, hourNine);
-//   //  console.log(hourNine, "9");
-//  });
-
-// var hourNine = $("#hour-9").find("textarea").val(function(event) {
-//     submitButtonNine(event, hourNine);
-//   //  console.log(hourNine, "9");
-//  });
-
-// saveBtn listener for click events
-// save user input in local storage
-//    use dom traversal
-  
-// past, present, future classes to each time element
-
-// code for any user input+
-
-
 
  // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
