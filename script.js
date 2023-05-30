@@ -45,6 +45,10 @@ $(function () {
         var textContentNine = textArea.val();
         $("#nineText").val(textContentNine);
         console.log(textContentNine);
+
+        const result = JSON.parse(localStorage.getItem("textContentNine"));
+       // result.push(result);
+        localStorage.setItem('result', JSON.stringify(result))
         });
     });
 
@@ -56,7 +60,10 @@ $(function () {
         var textContentTen = textArea.val();
         $("#tenText").val(textContentTen);
         console.log(textContentTen);
+
+        
         });
+        
     });
 
      $("#form").find("#hour-11").each(function() {
