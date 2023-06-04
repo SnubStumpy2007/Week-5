@@ -24,7 +24,6 @@
 // WHEN I refresh the page
 // THEN the saved events persist
 
-// flexbox and custom styling.
 $(function () {
     // current day
     var today = dayjs();
@@ -100,8 +99,3 @@ $(function () {
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
-
-
-  // Steps and what I did
-  // 1.  Added date method citing one of our class activities
-  // 2.  Link submit button to the jQuery file using an alert prompt.
