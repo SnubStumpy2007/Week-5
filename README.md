@@ -36,3 +36,4 @@ The Day Planner is released under the MIT License.
 If you have any questions, feedback, or inquiries, you can reach me at joshua192007@gmail.com.
 
 Enjoy planning your day with the Day Planner!
+![daily scheduler](https://github.com/SnubStumpy2007/Week-5/assets/25469843/9695dd0e-821a-48c3-9555-7830dad7bd78)
